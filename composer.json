@@ -3,7 +3,8 @@
     "description": "Task",
     "license": "BSD-3-Clause",
     "require": {
-        "php": ">=7.0.22"
+        "php": ">=7.0.22",
+        "amphp/parallel": "^1.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^6"
