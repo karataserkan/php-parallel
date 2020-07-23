@@ -1,11 +1,11 @@
 <?php
 //We loads autoloads
-require __DIR__.'/vendor/autoload.php';
-require __DIR__.'/Psr4AutoloaderClass.php';
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/Psr4AutoloaderClass.php';
 
 (new app\Psr4AutoloaderClass())->register();
 
-$GLOBALS['config'] = $config = require __DIR__.'/config/config.php';
+$GLOBALS['config'] = $config = require __DIR__ . '/config/config.php';
 
 try {
     //first param is this file
@@ -21,8 +21,8 @@ try {
             1
         );
     }
-    $controller = "app\controllers\\".ucfirst($parts[0]).'Controller';
-    $method = $parts[1];
+    $controller = "app\controllers\\" . ucfirst($parts[0]) . 'Controller';
+    $method     = $parts[1];
 
     if (!class_exists($controller)) {
         throw new \BadMethodCallException('Controller does not exists', 1);
@@ -37,7 +37,7 @@ try {
     $controller->$method($argv);
 } catch (\Exception $e) {
     $out = fopen('php://stdout', 'w');
-    fputs($out, $e->getMessage().PHP_EOL);
+    fputs($out, $e->getMessage() . PHP_EOL);
     fclose($out);
 }
 
