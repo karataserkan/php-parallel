@@ -1,4 +1,4 @@
-# AMP Parallel works
+# amphp/parallel works
 
 ## Installation
 Clone or download this repository. Install dependencies ```composer install```
